@@ -238,6 +238,7 @@ const CLI_COMMANDS = {
   help: () => `
 <span class="text-cyan-400 font-bold">AVAILABLE PROTOCOLS:</span>
   <span class="text-emerald-400 font-mono">projects</span>      - Inspect the 4 flagship engineering repositories with technical summaries
+  <span class="text-emerald-400 font-mono">resume</span>        - View / open official printable CV & technical qualifications
   <span class="text-emerald-400 font-mono">skills</span>        - Technical radar: Big Data, Machine Learning, and Web Architecture
   <span class="text-emerald-400 font-mono">architecture</span>  - ASCII diagram of the distributed Big Data ETL pipeline
   <span class="text-emerald-400 font-mono">benchmarks</span>    - Performance metrics (Spark ingestion throughput, DL accuracy, ROC-AUC)
@@ -245,6 +246,12 @@ const CLI_COMMANDS = {
   <span class="text-emerald-400 font-mono">whoami</span>        - Professional profile & executive summary
   <span class="text-emerald-400 font-mono">contact</span>       - Communication protocols & direct links
   <span class="text-emerald-400 font-mono">clear</span>         - Purge the terminal display
+`,
+  resume: () => `
+<span class="text-cyan-400 font-bold">📄 OFFICIAL CURRICULUM VITAE & QUALIFICATIONS:</span>
+  Access the complete printable, ATS-optimized CV formatted for IT Support, Systems, and Software/Data roles:
+
+  👉 <a href="resume.html" target="_blank" class="text-emerald-400 font-bold underline text-sm">[ Open Official Resume / CV (PDF Ready) ]</a>
 `,
   projects: () => `
 <span class="text-cyan-400 font-bold">📁 FLAGSHIP ENGINEERING REPOSITORIES:</span>
@@ -325,8 +332,10 @@ const CLI_COMMANDS = {
 `,
   contact: () => `
 <span class="text-cyan-400 font-bold">📡 DIRECT TRANSMISSION CHANNELS:</span>
+  • LinkedIn:  <a href="https://www.linkedin.com/in/vaibhav-mistry-913971242/" target="_blank" class="text-cyan-400 underline">linkedin.com/in/vaibhav-mistry-913971242/</a>
   • GitHub:    <a href="https://github.com/vaibhavmistryyy" target="_blank" class="text-cyan-400 underline">github.com/vaibhavmistryyy</a>
   • Portfolio: <a href="https://vaibhavmistryyy.github.io" target="_blank" class="text-cyan-400 underline">vaibhavmistryyy.github.io</a>
+  • Resume:    <a href="resume.html" target="_blank" class="text-emerald-400 underline">vaibhavmistryyy.github.io/resume.html</a>
   • Email:     <a href="mailto:vaibhavmistry57@gmail.com" class="text-emerald-400 underline">vaibhavmistry57@gmail.com</a>
   • Location:  Toronto, Ontario, Canada
 `,

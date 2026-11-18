@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaibhav Mistry — Resume / Curriculum Vitae</title>
+  <meta name="description" content="Resume of Vaibhav Mistry: IT Professional, Technical Support Specialist, and Full-Stack / Big Data Developer. Toronto, ON.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+      background-color: #0f172a;
+    }
+
+    .font-mono {
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Print Optimization Rules */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10pt;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .resume-container {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: #000000 !important;
+      }
+      .section-divider {
+        border-color: #334155 !important;
+      }
+      @page {
+        margin: 0.5in;
+        size: letter portrait;
+      }
+    }
+  </style>
+</head>
+<body class="py-6 px-4 sm:px-6">
+
+  <!-- Floating Navigation & Print Action Bar (Hidden on Print) -->
+  <div class="no-print max-w-4xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 bg-slate-900/90 backdrop-blur-md border border-slate-800 p-4 rounded-xl shadow-xl">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to Portfolio</span>
+      </a>
+      <span class="text-xs font-mono text-cyan-400 font-semibold hidden sm:inline">// VAIBHAV MISTRY — OFFICIAL CV</span>
+    </div>
+
+    <div class="flex items-center gap-2.5">
+      <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-xs font-mono transition-all shadow-md">
+        <i data-lucide="printer" class="w-4 h-4"></i>
+        <span>Print / Save as PDF</span>
+      </button>
+      <button onclick="copyResumeLink()" class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono transition-colors">
+        <i data-lucide="share-2" class="w-4 h-4"></i>
+        <span class="hidden sm:inline">Copy Link</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Printable Resume Sheet -->
+  <div class="resume-container max-w-4xl mx-auto bg-white rounded-xl shadow-2xl border border-slate-200 p-8 sm:p-12 text-slate-800">
+    
+    <!-- HEADER -->
+    <header class="text-center pb-5 border-b-2 border-slate-800">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 uppercase">
+        Vaibhav Mistry
+      </h1>
+      <p class="text-xs sm:text-sm font-semibold text-cyan-700 tracking-wider uppercase mt-1">
+        IT Specialist • Technical Support & Systems • Big Data & Software Developer
+      </p>
+
+      <!-- Contact Info & Hyperlinks -->
+      <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-600 mt-3 font-medium">
+        <span>Toronto, ON, Canada</span>
+        <span>•</span>
+        <a href="tel:+19059065598" class="text-slate-800 hover:text-cyan-600 font-medium">+1 (905) 906-5598</a>
+        <span>•</span>
+        <a href="mailto:vaibhavmistry57@gmail.com" class="text-cyan-700 hover:underline font-semibold">vaibhavmistry57@gmail.com</a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/vaibhav-mistry-913971242/" target="_blank" class="text-cyan-700 hover:underline font-semibold flex items-center gap-1">
+          <span>LinkedIn</span>
+        </a>
+        <span>•</span>
+        <a href="https://github.com/vaibhavmistryyy" target="_blank" class="text-cyan-700 hover:underline font-semibold flex items-center gap-1">
+          <span>GitHub</span>
+        </a>
+        <span>•</span>
+        <a href="https://vaibhavmistryyy.github.io" target="_blank" class="text-cyan-700 hover:underline font-semibold flex items-center gap-1">
+          <span>Portfolio Website</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section class="mt-5">
+      <h2 class="text-xs font-bold font-mono tracking-widest text-slate-900 uppercase pb-1 border-b border-slate-300">
+        Professional Summary
+      </h2>
+      <p class="text-[13px] leading-relaxed text-slate-700 mt-2 text-justify">
+        Results-driven <strong>Information Technology Professional</strong> with a Post-Graduate Certificate in Information Technology Solutions from Humber College and a Bachelor of Computer Applications. Proven technical acumen spanning <strong>IT support, hardware & software troubleshooting, network configuration, and enterprise software engineering</strong>. Demonstrated track record diagnosing and resolving technical incidents on POS systems and self-service kiosks under high-volume pressures, managing Windows, macOS, and Linux workstations, and developing automated tools (Node.js, Python, Playwright). Adept at combining rigorous technical diagnostics with exceptional customer-facing communication to optimize system availability and drive organizational uptime.
+      </p>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section class="mt-5">
+      <h2 class="text-xs font-bold font-mono tracking-widest text-slate-900 uppercase pb-1 border-b border-slate-300">
+        Technical Skills
+      </h2>
+      <div class="mt-2 space-y-1.5 text-[12.5px] text-slate-700">
+        <div>
+          <strong class="font-semibold text-slate-950">IT Support & Systems:</strong>
+          <span>Hardware & peripheral diagnostics, POS systems & self-service kiosks, Active Directory user concepts, Remote Desktop, VirtualBox (VMs), incident triage & escalation, ticketing workflows.</span>
+        </div>
+        <div>
+          <strong class="font-semibold text-slate-950">Operating Systems & Networking:</strong>
+          <span>Windows 10/11, macOS, Linux (Ubuntu/Debian), TCP/IP fundamentals, DNS, DHCP, LAN/WAN, Wi-Fi configuration & diagnostics, VPN fundamentals.</span>
+        </div>
+        <div>
+          <strong class="font-semibold text-slate-950">Programming, Scripting & Automation:</strong>
+          <span>Python, JavaScript (ES6+), Node.js, Express.js, Bash / Shell scripting, Playwright automation, HTML5, CSS3, Tailwind CSS.</span>
+        </div>
+        <div>
+          <strong class="font-semibold text-slate-950">Databases & Distributed Systems:</strong>
+          <span>SQL, MySQL, MongoDB, Apache Spark / PySpark, Hadoop HDFS, Apache Hive, schema optimization, ETL concepts.</span>
+        </div>
+        <div>
+          <strong class="font-semibold text-slate-950">Tools, Platforms & Administration:</strong>
+          <span>REST APIs, Postman, Git / GitHub, Microsoft Office 365, Google Workspace, WordPress (2+ years), Vite, Composer.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL & ENGINEERING PROJECTS -->
+    <section class="mt-5">
+      <h2 class="text-xs font-bold font-mono tracking-widest text-slate-900 uppercase pb-1 border-b border-slate-300">
+        Technical & Engineering Projects
+      </h2>
+      <div class="mt-3 space-y-3.5">
+
+        <!-- Project 1: Big Data Workplace Mental Health -->
+        <div>
+          <div class="flex flex-wrap items-baseline justify-between text-xs sm:text-[13px]">
+            <div>
+              <a href="https://github.com/vaibhavmistryyy/workplace-mental-health-big-data" target="_blank" class="font-bold text-slate-950 hover:text-cyan-700 hover:underline">
+                Workplace Mental Health Big Data Analytics Pipeline
+              </a>
+              <span class="text-slate-600 font-medium">| Hadoop HDFS, Apache Hive, Apache Spark, PySpark MLlib</span>
+            </div>
+            <a href="https://github.com/vaibhavmistryyy/workplace-mental-health-big-data" target="_blank" class="text-[11px] font-mono text-cyan-700 hover:underline">
+              [GitHub Repo]
+            </a>
+          </div>
+          <ul class="list-disc list-outside pl-4 mt-1 space-y-0.5 text-[12px] text-slate-700 leading-snug">
+            <li>Architected an end-to-end distributed Big Data pipeline ingesting multi-parameter enterprise health records into Hadoop HDFS.</li>
+            <li>Created schema-on-read tables and automated data-cleaning audits in Apache Hive to enforce relational data integrity and validate missing attributes.</li>
+            <li>Implemented Spark SQL feature transformations and trained Spark MLlib Gradient-Boosted Trees, achieving a <strong>0.812 ROC-AUC</strong> predictive score.</li>
+          </ul>
+        </div>
+
+        <!-- Project 2: Job Automation Bot -->
+        <div>
+          <div class="flex flex-wrap items-baseline justify-between text-xs sm:text-[13px]">
+            <div>
+              <span class="font-bold text-slate-950">Job Application Automation & API Toolkit</span>
+              <span class="text-slate-600 font-medium">| Node.js, REST APIs, Playwright, Anthropic API</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-500">Personal Project</span>
+          </div>
+          <ul class="list-disc list-outside pl-4 mt-1 space-y-0.5 text-[12px] text-slate-700 leading-snug">
+            <li>Engineered a custom Node.js automation utility querying Greenhouse and Lever job board APIs with automated location filtering to surface open IT roles.</li>
+            <li>Integrated the Anthropic API to synthesize targeted cover letters from applicant parameters, incorporating manual pre-flight validation checks.</li>
+            <li>Constructed a Playwright form-autofill script paired with a responsive HTML dashboard to track application lifecycles and reduce manual entry by 70%.</li>
+          </ul>
+        </div>
+
+        <!-- Project 3: Staff Service Dashboard -->
+        <div>
+          <div class="flex flex-wrap items-baseline justify-between text-xs sm:text-[13px]">
+            <div>
+              <span class="font-bold text-slate-950">Staff Service Management Dashboard</span>
+              <span class="text-slate-600 font-medium">| React Native, Node.js, Google Maps API, Token Auth</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-500">Jan 2025 – Apr 2025</span>
+          </div>
+          <ul class="list-disc list-outside pl-4 mt-1 space-y-0.5 text-[12px] text-slate-700 leading-snug">
+            <li>Developed a cross-platform mobile and web application enabling staff to view, filter, and triage service tickets across statuses (Approved, Completed, Escalated).</li>
+            <li>Engineered robust client-side form validation for staff records and integrated token-protected REST endpoints with comprehensive HTTP error handling.</li>
+            <li>Integrated Google Maps geocoding APIs across Android and iOS to pinpoint service dispatch coordinates for on-site technicians.</li>
+          </ul>
+        </div>
+
+        <!-- Project 4: Trade Finance Guarantee System -->
+        <div>
+          <div class="flex flex-wrap items-baseline justify-between text-xs sm:text-[13px]">
+            <div>
+              <a href="https://github.com/vaibhavmistryyy/TradeFinanceGuaranteeSystem" target="_blank" class="font-bold text-slate-950 hover:text-cyan-700 hover:underline">
+                Trade Finance Guarantee Management System
+              </a>
+              <span class="text-slate-600 font-medium">| Laravel 11, PHP 8.2+, Tailwind CSS, MySQL</span>
+            </div>
+            <a href="https://github.com/vaibhavmistryyy/TradeFinanceGuaranteeSystem" target="_blank" class="text-[11px] font-mono text-cyan-700 hover:underline">
+              [GitHub Repo]
+            </a>
+          </div>
+          <ul class="list-disc list-outside pl-4 mt-1 space-y-0.5 text-[12px] text-slate-700 leading-snug">
+            <li>Designed a corporate banking application automating the issuance, lifecycle tracking, and validation of bank guarantees and letters of credit.</li>
+            <li>Engineered a high-throughput CSV bulk upload parser and decoupled business logic into a dedicated <code>GuaranteeService</code> layer with Eloquent ORM.</li>
+            <li>Enforced strict web security measures including CSRF tokens, parameter binding, email verification, and session authentication.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section class="mt-5">
+      <h2 class="text-xs font-bold font-mono tracking-widest text-slate-900 uppercase pb-1 border-b border-slate-300">
+        Professional Experience
+      </h2>
+      <div class="mt-3 space-y-3.5">
+
+        <!-- Cineplex Entertainment -->
+        <div>
+          <div class="flex flex-wrap items-baseline justify-between text-xs sm:text-[13px]">
+            <div>
+              <strong class="font-bold text-slate-950">Team Member & Frontline Systems Support</strong>
+              <span class="text-slate-600">| Cineplex Entertainment — Toronto, ON</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-600 font-medium">Sep 2023 – Present</span>
+          </div>
+          <ul class="list-disc list-outside pl-4 mt-1 space-y-0.5 text-[12px] text-slate-700 leading-snug">
+            <li>Diagnosed and resolved front-line technical hardware and software incidents across point-of-sale (POS) terminals, digital ticketing kiosks, and card readers, minimizing guest downtime.</li>
+            <li>Executed first-level troubleshooting workflows (reboot sequences, network cable/Wi-Fi verification, peripheral reseating) and escalated unresolvable network/server outages to Tier-2 IT teams.</li>
+            <li>Maintained strict accuracy across daily electronic transaction reconciliations and cash drawer balancing in high-volume, time-sensitive operational conditions.</li>
+            <li>Trained and mentored 10+ newly hired team members on POS system navigation, incident reporting protocols, and guest service excellence.</li>
+          </ul>
+        </div>
+
+        <!-- Awadh Corporation -->
+        <div>
+          <div class="flex flex-wrap items-baseline justify-between text-xs sm:text-[13px]">
+            <div>
+              <strong class="font-bold text-slate-950">Data Entry & Records Operator</strong>
+              <span class="text-slate-600">| Awadh Corporation</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-600 font-medium">Dec 2016 – Jun 2019</span>
+          </div>
+          <ul class="list-disc list-outside pl-4 mt-1 space-y-0.5 text-[12px] text-slate-700 leading-snug">
+            <li>Audited, formatted, and maintained high-volume records across operational databases, executing rigorous data integrity validation and discrepancy checks.</li>
+            <li>Generated structured weekly and monthly operational summary reports for senior management using spreadsheet tools and basic SQL queries.</li>
+            <li>Collaborated with administrative team members to standardize digital archiving procedures, improving internal file retrieval speed by 25%.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="mt-5">
+      <h2 class="text-xs font-bold font-mono tracking-widest text-slate-900 uppercase pb-1 border-b border-slate-300">
+        Education
+      </h2>
+      <div class="mt-2.5 space-y-2 text-[12.5px] text-slate-800">
+        <div class="flex flex-wrap items-baseline justify-between">
+          <div>
+            <strong class="font-bold text-slate-950">Post-Graduate Certificate in Information Technology Solutions</strong><br>
+            <span class="text-slate-600">Humber College Institute of Technology and Advanced Learning — Toronto, ON</span>
+          </div>
+          <span class="text-[11px] font-mono text-slate-600 font-medium">Sep 2023 – Apr 2025</span>
+        </div>
+        <div class="flex flex-wrap items-baseline justify-between">
+          <div>
+            <strong class="font-bold text-slate-950">Bachelor of Computer Applications (BCA)</strong><br>
+            <span class="text-slate-600">V.S. Patel Arts & Science College — Bilimora, India</span>
+          </div>
+          <span class="text-[11px] font-mono text-slate-600 font-medium">Jun 2019 – Apr 2022</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="no-print fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-950 border border-emerald-500/60 text-emerald-400 px-4 py-3 rounded-xl shadow-2xl font-mono text-xs flex items-center gap-2">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span>[COPIED] Resume link copied to clipboard!</span>
+  </div>
+
+  <script>
+    function copyResumeLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const toast = document.getElementById('toast');
+        if (toast) {
+          toast.classList.remove('translate-y-20', 'opacity-0');
+          toast.classList.add('translate-y-0', 'opacity-100');
+          setTimeout(() => {
+            toast.classList.add('translate-y-20', 'opacity-0');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+          }, 2500);
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

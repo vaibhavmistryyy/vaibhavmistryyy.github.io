@@ -89,15 +89,22 @@
           <span class="text-xs text-slate-400 font-mono">AUDIO: OFF</span>
         </button>
 
-        <!-- GitHub Profile Direct Link -->
-        <a href="https://github.com/vaibhavmistryyy" target="_blank" class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-200 hover:border-cyan-400 hover:text-white transition-all font-mono text-xs">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span class="hidden sm:inline">GitHub</span>
+        <!-- View Resume / CV Direct Link -->
+        <a href="resume.html" target="_blank" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-cyan-500/50 bg-cyan-950/30 text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all font-mono text-xs">
+          <i data-lucide="file-text" class="w-4 h-4"></i>
+          <span>View CV</span>
         </a>
 
-        <!-- Contact CTA -->
-        <a href="#contact" class="px-4 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-xs font-mono transition-colors shadow-sm">
-          Get In Touch
+        <!-- LinkedIn Profile Direct Link -->
+        <a href="https://www.linkedin.com/in/vaibhav-mistry-913971242/" target="_blank" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-200 hover:border-cyan-400 hover:text-white transition-all font-mono text-xs">
+          <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400"></i>
+          <span>LinkedIn</span>
+        </a>
+
+        <!-- GitHub Profile Direct Link -->
+        <a href="https://github.com/vaibhavmistryyy" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-200 hover:border-cyan-400 hover:text-white transition-all font-mono text-xs">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">GitHub</span>
         </a>
       </div>
 
@@ -157,13 +164,13 @@
 
           <!-- Hero Action Buttons -->
           <div class="flex flex-wrap gap-4 pt-2">
-            <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-black font-semibold text-sm tracking-wide flex items-center gap-2 shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5">
-              <span>Explore Projects</span>
-              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            <a href="resume.html" target="_blank" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-black font-semibold text-sm tracking-wide flex items-center gap-2 shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>View Official Resume / CV</span>
             </a>
-            <a href="#contact" class="px-6 py-3 rounded-xl border border-slate-700 bg-slate-900 hover:border-cyan-500 hover:bg-slate-800 text-slate-200 font-mono text-sm tracking-wide flex items-center gap-2 transition-all">
-              <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
-              <span>Contact Me</span>
+            <a href="#projects" class="px-6 py-3 rounded-xl border border-slate-700 bg-slate-900 hover:border-cyan-500 hover:bg-slate-800 text-slate-200 font-mono text-sm tracking-wide flex items-center gap-2 transition-all">
+              <span>Explore Projects</span>
+              <i data-lucide="arrow-down" class="w-4 h-4 text-cyan-400"></i>
             </a>
           </div>
         </div>
@@ -458,6 +465,7 @@
         <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
           <span class="text-slate-500 text-[11px]">PRESETS:</span>
           <button onclick="runPreset('projects')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">projects</button>
+          <button onclick="runPreset('resume')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-emerald-500/60 hover:border-emerald-400 text-emerald-400 transition-colors">resume</button>
           <button onclick="runPreset('skills')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">skills</button>
           <button onclick="runPreset('architecture')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">architecture</button>
           <button onclick="runPreset('benchmarks')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">benchmarks</button>
@@ -650,14 +658,22 @@
           <a href="mailto:vaibhavmistry57@gmail.com" class="inline-block font-mono text-sm text-slate-300 hover:text-cyan-400 mt-2 transition-colors">vaibhavmistry57@gmail.com</a>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-          <a href="https://github.com/vaibhavmistryyy" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-xl border border-slate-700 bg-slate-900 hover:border-cyan-400 text-white font-mono text-xs flex items-center justify-center gap-2 transition-all">
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <a href="resume.html" target="_blank" class="w-full sm:w-auto px-5 py-3 rounded-xl border border-cyan-500/50 bg-cyan-950/40 text-cyan-300 hover:bg-cyan-900/50 hover:border-cyan-400 font-mono text-xs flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>View Printable CV</span>
+          </a>
+          <a href="https://www.linkedin.com/in/vaibhav-mistry-913971242/" target="_blank" class="w-full sm:w-auto px-5 py-3 rounded-xl border border-slate-700 bg-slate-900 hover:border-cyan-400 text-white font-mono text-xs flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400"></i>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="https://github.com/vaibhavmistryyy" target="_blank" class="w-full sm:w-auto px-5 py-3 rounded-xl border border-slate-700 bg-slate-900 hover:border-cyan-400 text-white font-mono text-xs flex items-center justify-center gap-2 transition-all">
             <i data-lucide="github" class="w-4 h-4 text-cyan-400"></i>
             <span>GitHub Profile</span>
           </a>
-          <button onclick="copyEmail('vaibhavmistry57@gmail.com')" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-xs font-mono flex items-center justify-center gap-2 transition-all shadow-md">
+          <button onclick="copyEmail('vaibhavmistry57@gmail.com')" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-xs font-mono flex items-center justify-center gap-2 transition-all shadow-md">
             <i data-lucide="copy" class="w-4 h-4"></i>
-            <span>Copy Email Address</span>
+            <span>Copy Email</span>
           </button>
         </div>
       </div>
