@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaibhav Mistry // Big Data Engineer & Machine Learning Specialist</title>
+  <meta name="description" content="Portfolio of Vaibhav Mistry: Big Data Engineering (Spark, Hive, HDFS), Deep Learning (1D-CNN + BiLSTM), and Enterprise Web Systems.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              black: '#06080e',
+              dark: '#0d1321',
+              card: 'rgba(13, 19, 33, 0.75)',
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              purple: '#a855f7',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Cyberpunk HUD Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#06080e] text-slate-100 min-h-screen cyber-grid relative font-sans">
+
+  <!-- Scanline CRT Overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Background Neural Constellation Canvas -->
+  <canvas id="neural-bg" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- Sticky High-Tech Navigation Bar -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#06080e]/85 border-b border-cyan-500/20 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand & Status Beacon -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded border border-cyan-500/40 bg-cyan-950/40 flex items-center justify-center font-mono font-bold text-cyan-400 group-hover:border-cyan-400 transition-colors">
+          VM
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-mono font-bold text-sm tracking-wider text-white">VAIBHAV MISTRY</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          </div>
+          <span class="font-mono text-[11px] text-cyan-400/80 tracking-widest uppercase">// SYS: ONLINE [TORONTO, CA]</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden md:flex items-center gap-6 font-mono text-xs">
+        <a href="#projects" class="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span class="text-cyan-500">[01]</span> PROJECTS
+        </a>
+        <a href="#terminal" class="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span class="text-cyan-500">[02]</span> TERMINAL
+        </a>
+        <a href="#simulator" class="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span class="text-cyan-500">[03]</span> BIOSIGNALS
+        </a>
+        <a href="#stack" class="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span class="text-cyan-500">[04]</span> STACK
+        </a>
+        <a href="#contact" class="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span class="text-cyan-500">[05]</span> CONTACT
+        </a>
+      </nav>
+
+      <!-- Right HUD Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Sound Synthesizer Toggle -->
+        <button id="sound-toggle" class="flex items-center gap-1.5 px-3 py-1.5 rounded border border-slate-800 bg-slate-900/80 hover:border-slate-700 transition-colors">
+          <i data-lucide="volume-x" class="w-4 h-4 text-slate-400"></i>
+          <span class="text-xs text-slate-400 font-mono">AUDIO: OFF</span>
+        </button>
+
+        <!-- GitHub Profile Direct Link -->
+        <a href="https://github.com/vaibhavmistryyy" target="_blank" class="flex items-center gap-2 px-3.5 py-1.5 rounded border border-cyan-500/50 bg-cyan-950/30 text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all font-mono text-xs">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">GITHUB</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-10 space-y-24">
+
+    <!-- ========================================================
+         HERO SECTION // THE COMMAND CONSOLE
+         ======================================================== -->
+    <section class="relative pt-6 pb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Hero Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/20 font-mono text-xs text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>AVAILABLE FOR FULL-TIME ROLES // BIG DATA & AI</span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
+              VAIBHAV <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">MISTRY</span>
+            </h1>
+            <p class="font-mono text-cyan-400 text-sm sm:text-base tracking-wide uppercase">
+              // Big Data Engineer & Machine Learning Specialist
+            </p>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Architecting end-to-end distributed data pipelines on <span class="text-white font-semibold">Hadoop HDFS, Hive, and Apache Spark</span>, engineering deep neural networks for <span class="text-white font-semibold">multi-channel biosignal classification</span>, and delivering robust full-stack enterprise systems.
+          </p>
+
+          <!-- Telemetry Badges -->
+          <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg">
+            <div class="p-3 rounded border border-slate-800 bg-slate-900/60 font-mono">
+              <div class="text-cyan-400 text-xl font-bold">4</div>
+              <div class="text-[11px] text-slate-400 uppercase">Core Flagships</div>
+            </div>
+            <div class="p-3 rounded border border-slate-800 bg-slate-900/60 font-mono">
+              <div class="text-emerald-400 text-xl font-bold">84.6%</div>
+              <div class="text-[11px] text-slate-400 uppercase">BiLSTM Accuracy</div>
+            </div>
+            <div class="p-3 rounded border border-slate-800 bg-slate-900/60 font-mono">
+              <div class="text-purple-400 text-xl font-bold">0.81</div>
+              <div class="text-[11px] text-slate-400 uppercase">Spark ROC-AUC</div>
+            </div>
+          </div>
+
+          <!-- Hero Actions -->
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-black font-mono font-bold text-sm tracking-wider flex items-center gap-2 shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5">
+              <span>EXPLORE PROJECTS</span>
+              <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#terminal" class="px-6 py-3 rounded-lg border border-slate-700 bg-slate-900/80 hover:border-cyan-500/60 hover:bg-slate-800 text-slate-200 font-mono text-sm tracking-wider flex items-center gap-2 transition-all">
+              <i data-lucide="terminal" class="w-4 h-4 text-cyan-400"></i>
+              <span>INITIALIZE CLI</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Telemetry HUD Card -->
+        <div class="lg:col-span-5">
+          <div class="tech-card corner-hud p-6 rounded-xl border border-cyan-500/30">
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-800 font-mono text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                <span class="text-cyan-400 font-bold uppercase tracking-wider">SYSTEM DIAGNOSTICS</span>
+              </div>
+              <span class="text-slate-500">SESSION: 0x7E3F</span>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+              <div class="flex justify-between py-1.5 border-b border-slate-900">
+                <span class="text-slate-400">OPERATOR:</span>
+                <span class="text-white font-semibold">Vaibhav Mistry</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-slate-900">
+                <span class="text-slate-400">CORE PIPELINE:</span>
+                <span class="text-cyan-300">PySpark / Hadoop / Hive</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-slate-900">
+                <span class="text-slate-400">DEEP LEARNING:</span>
+                <span class="text-emerald-300">1D-CNN + BiLSTM (TensorFlow)</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-slate-900">
+                <span class="text-slate-400">FULL-STACK STACK:</span>
+                <span class="text-purple-300">Laravel 11 / Tailwind / MySQL</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-slate-900">
+                <span class="text-slate-400">TELEMETRY UPTIME:</span>
+                <span id="uptime-counter" class="text-yellow-400">00:00:00</span>
+              </div>
+              <div class="flex justify-between py-1.5">
+                <span class="text-slate-400">LINK STATUS:</span>
+                <span class="text-emerald-400 font-bold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  OPTIMAL (24ms)
+                </span>
+              </div>
+            </div>
+
+            <div class="mt-5 p-3 rounded bg-slate-950/80 border border-slate-800/80 font-mono text-[11px] text-slate-400 leading-relaxed">
+              <span class="text-cyan-400 font-bold">// RECRUITER QUICK-ACCESS:</span> Type <code class="text-emerald-400">projects</code> or <code class="text-emerald-400">skills</code> in the terminal console below for fast command-line extraction.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 1 // THE INTERACTIVE HACKER TERMINAL
+         ======================================================== -->
+    <section id="terminal" class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="font-mono text-xs text-cyan-400 uppercase tracking-widest">[ SYSTEM CLI ENGINE ]</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-2">
+            Interactive Command Line <span class="text-cyan-400 font-mono text-lg font-normal">v2.1</span>
+          </h2>
+        </div>
+        <!-- Quick Preset Pills -->
+        <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+          <span class="text-slate-500 text-[11px]">PRESETS:</span>
+          <button onclick="runPreset('help')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">help</button>
+          <button onclick="runPreset('projects')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">projects</button>
+          <button onclick="runPreset('skills')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">skills</button>
+          <button onclick="runPreset('metrics')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">metrics</button>
+          <button onclick="runPreset('whoami')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 hover:border-cyan-400 text-cyan-400 transition-colors">whoami</button>
+          <button onclick="runPreset('clear')" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 hover:border-rose-400 text-rose-400 transition-colors">clear</button>
+        </div>
+      </div>
+
+      <!-- Terminal Emulator Window -->
+      <div class="terminal-window rounded-xl overflow-hidden border border-cyan-500/30">
+        <!-- Window Title Bar -->
+        <div class="bg-slate-950/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            <span class="ml-2 font-mono text-xs text-slate-400">vm@system-host: ~ (zsh)</span>
+          </div>
+          <span class="font-mono text-[11px] text-cyan-400/80">UTF-8 // ACTIVE</span>
+        </div>
+
+        <!-- Terminal Output Stream -->
+        <div id="terminal-body" class="p-5 font-mono text-sm h-80 overflow-y-auto space-y-2 text-slate-200">
+          <div class="text-slate-400">
+            Welcome to <span class="text-white font-bold">Vaibhav Mistry's</span> Terminal Console [Version 2.6.4-LTS].<br>
+            Type <span class="text-cyan-400 font-bold underline cursor-pointer" onclick="runPreset('help')">help</span> to list commands, or select presets above to inspect repositories, models, and architectures.
+          </div>
+          <div class="text-emerald-400">
+            [SYS_OK] All 4 flagship engineering repositories loaded & verified.
+          </div>
+        </div>
+
+        <!-- Terminal Input Prompt -->
+        <div class="bg-slate-950 px-5 py-3 border-t border-slate-800/80 flex items-center gap-2 font-mono text-sm">
+          <span class="text-emerald-400 font-bold">guest@vaibhav-system:~$</span>
+          <input id="terminal-input" type="text" placeholder="type a command (e.g. projects, skills, metrics)..." autocomplete="off" spellcheck="false" class="flex-1 bg-transparent border-none outline-none text-white font-mono placeholder:text-slate-600 focus:ring-0">
+          <span class="terminal-cursor"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 2 // FLAGSHIP ENGINEERING PROJECTS
+         ======================================================== -->
+    <section id="projects" class="space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="font-mono text-xs text-cyan-400 uppercase tracking-widest">[ PRODUCTION PORTFOLIO ]</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Flagship Engineering Projects</h2>
+          <p class="text-slate-400 text-sm mt-1 max-w-xl">
+            Production-grade systems bridging distributed data engineering, deep neural biosignal processing, and enterprise web architecture.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 font-mono text-xs">
+          <button class="filter-pill active-filter px-3 py-1.5 rounded-lg border border-cyan-500/40 bg-cyan-950/40 text-cyan-300 transition-all" data-filter="all">ALL</button>
+          <button class="filter-pill px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white transition-all" data-filter="bigdata">BIG DATA & SPARK</button>
+          <button class="filter-pill px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white transition-all" data-filter="ai">DEEP LEARNING / AI</button>
+          <button class="filter-pill px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white transition-all" data-filter="fullstack">ENTERPRISE SYSTEM</button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- PROJECT 1: Big Data Workplace Mental Health -->
+        <div class="project-card tech-card rounded-xl p-6 flex flex-col justify-between border border-slate-800/80" data-category="bigdata all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[11px] uppercase tracking-wider font-semibold">
+                BIG DATA ARCHITECTURE
+              </span>
+              <span class="text-slate-500 font-mono text-xs">FLAGSHIP 01</span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                Workplace Mental Health Big Data Analytics
+              </h3>
+              <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                Distributed multi-stage data engineering and predictive modeling pipeline. Ingests raw surveys to Hadoop HDFS, executes schema auditing & demographic analysis with Apache Hive, and builds Spark MLlib classifiers.
+              </p>
+            </div>
+
+            <!-- Pipeline Diagram Preview -->
+            <div class="rounded-lg overflow-hidden border border-slate-800 bg-slate-950 p-2.5 cursor-pointer" onclick="openProjectModal('big-data')">
+              <img src="assets/architecture_pipeline.svg" alt="Distributed Architecture Pipeline" class="w-full h-36 object-contain">
+              <div class="text-center font-mono text-[11px] text-cyan-400/80 mt-1.5">
+                🔍 Click to expand architecture pipeline
+              </div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs pt-1">
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">Hadoop HDFS</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">Apache Hive</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">Apache Spark</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">PySpark MLlib</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-400 border border-emerald-900/60">ROC-AUC: 0.81</span>
+            </div>
+          </div>
+
+          <!-- Card Actions -->
+          <div class="flex items-center justify-between pt-6 mt-4 border-t border-slate-800/80">
+            <button onclick="openProjectModal('big-data')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+              <span>VIEW DIAGNOSTICS</span>
+              <i data-lucide="info" class="w-3.5 h-3.5"></i>
+            </button>
+            <a href="https://github.com/vaibhavmistryyy/workplace-mental-health-big-data" target="_blank" class="px-4 py-2 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-500/40 text-cyan-300 font-mono text-xs flex items-center gap-2 transition-colors">
+              <span>EXPLORE CODE</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Deep Learning Sleep Staging -->
+        <div class="project-card tech-card rounded-xl p-6 flex flex-col justify-between border border-slate-800/80" data-category="ai all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-400 font-mono text-[11px] uppercase tracking-wider font-semibold">
+                DEEP LEARNING // BIOSIGNALS
+              </span>
+              <span class="text-slate-500 font-mono text-xs">FLAGSHIP 02</span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                Automated Sleep Stage Classification from Biosignals
+              </h3>
+              <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                Hybrid 1D-CNN + Bidirectional LSTM neural network classifying multi-channel Polysomnography (EEG, EOG, EMG) recordings into clinical sleep stages with 84.6% accuracy and 0.82 Cohen’s Kappa.
+              </p>
+            </div>
+
+            <!-- Plot Preview -->
+            <div class="rounded-lg overflow-hidden border border-slate-800 bg-slate-950 p-2.5 cursor-pointer" onclick="openProjectModal('sleep-stage')">
+              <img src="assets/epoch_signals_eeg_eog_emg.png" alt="Multi-Channel Biosignal Epochs" class="w-full h-36 object-contain">
+              <div class="text-center font-mono text-[11px] text-cyan-400/80 mt-1.5">
+                🔍 Click to inspect confusion matrix & signals
+              </div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs pt-1">
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-purple-300 border border-purple-900/60">TensorFlow / Keras</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-purple-300 border border-purple-900/60">1D-CNN</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-purple-300 border border-purple-900/60">Bidirectional LSTM</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-purple-300 border border-purple-900/60">MNE-Python</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-400 border border-emerald-900/60">Acc: 84.6%</span>
+            </div>
+          </div>
+
+          <!-- Card Actions -->
+          <div class="flex items-center justify-between pt-6 mt-4 border-t border-slate-800/80">
+            <button onclick="openProjectModal('sleep-stage')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+              <span>VIEW DIAGNOSTICS</span>
+              <i data-lucide="info" class="w-3.5 h-3.5"></i>
+            </button>
+            <a href="https://github.com/vaibhavmistryyy/sleep-stage-classification" target="_blank" class="px-4 py-2 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-500/40 text-cyan-300 font-mono text-xs flex items-center gap-2 transition-colors">
+              <span>EXPLORE CODE</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: Trade Finance Guarantee System -->
+        <div class="project-card tech-card rounded-xl p-6 flex flex-col justify-between border border-slate-800/80" data-category="fullstack all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-[11px] uppercase tracking-wider font-semibold">
+                ENTERPRISE WEB PLATFORM
+              </span>
+              <span class="text-slate-500 font-mono text-xs">FLAGSHIP 03</span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                Trade Finance Guarantee Management System
+              </h3>
+              <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                Corporate trade banking application streamlining the issuance, lifecycle tracking, and validation of bank guarantees. Features a bulk file upload ingestion engine and decoupled Service Layer pattern.
+              </p>
+            </div>
+
+            <div class="rounded-lg border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-slate-300 space-y-2 cursor-pointer" onclick="openProjectModal('trade-finance')">
+              <div class="text-cyan-400 font-bold">// ARCHITECTURAL SPEC:</div>
+              <div class="text-slate-400">• Service Layer: <span class="text-white">GuaranteeService DI</span></div>
+              <div class="text-slate-400">• High-Throughput: <span class="text-white">Batch CSV Ingestion</span></div>
+              <div class="text-slate-400">• Security: <span class="text-white">Breeze Auth + CSRF Defense</span></div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs pt-1">
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">Laravel 11</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">PHP 8.2+</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">MySQL</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-cyan-900/60">Vite</span>
+            </div>
+          </div>
+
+          <!-- Card Actions -->
+          <div class="flex items-center justify-between pt-6 mt-4 border-t border-slate-800/80">
+            <button onclick="openProjectModal('trade-finance')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+              <span>VIEW ARCHITECTURE</span>
+              <i data-lucide="info" class="w-3.5 h-3.5"></i>
+            </button>
+            <a href="https://github.com/vaibhavmistryyy/TradeFinanceGuaranteeSystem" target="_blank" class="px-4 py-2 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-500/40 text-cyan-300 font-mono text-xs flex items-center gap-2 transition-colors">
+              <span>EXPLORE CODE</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: Trinity Restaurant -->
+        <div class="project-card tech-card rounded-xl p-6 flex flex-col justify-between border border-slate-800/80" data-category="fullstack all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] uppercase tracking-wider font-semibold">
+                CLIENT EXPERIENCE WEB
+              </span>
+              <span class="text-slate-500 font-mono text-xs">FLAGSHIP 04</span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                Trinity Fine Dining & Lounge Web Application
+              </h3>
+              <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                Responsive single-page web experience showcasing interactive menu browsing, category-based meal filtering, and online table reservations with zero heavy external framework dependencies.
+              </p>
+            </div>
+
+            <div class="rounded-lg border border-slate-800 bg-slate-950 p-4 font-mono text-xs text-slate-300 space-y-2 cursor-pointer" onclick="openProjectModal('trinity-restaurant')">
+              <div class="text-emerald-400 font-bold">// FRONT-END METRICS:</div>
+              <div class="text-slate-400">• Performance: <span class="text-white">98+ Lighthouse Score</span></div>
+              <div class="text-slate-400">• Interactivity: <span class="text-white">Swiper.js Touch Carousels</span></div>
+              <div class="text-slate-400">• UI Architecture: <span class="text-white">Modular CSS3 Grid/Flexbox</span></div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 font-mono text-xs pt-1">
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-300 border border-emerald-900/60">JavaScript (ES6+)</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-300 border border-emerald-900/60">jQuery</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-300 border border-emerald-900/60">Swiper.js</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-emerald-300 border border-emerald-900/60">Responsive UI</span>
+            </div>
+          </div>
+
+          <!-- Card Actions -->
+          <div class="flex items-center justify-between pt-6 mt-4 border-t border-slate-800/80">
+            <button onclick="openProjectModal('trinity-restaurant')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+              <span>VIEW EXPERIENCE</span>
+              <i data-lucide="info" class="w-3.5 h-3.5"></i>
+            </button>
+            <a href="https://github.com/vaibhavmistryyy/vaibhav-trinity-restaurant" target="_blank" class="px-4 py-2 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-500/40 text-cyan-300 font-mono text-xs flex items-center gap-2 transition-colors">
+              <span>EXPLORE CODE</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 3 // INTERACTIVE BIOSIGNAL SIMULATOR
+         ======================================================== -->
+    <section id="simulator" class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="font-mono text-xs text-purple-400 uppercase tracking-widest">[ NEURAL SIGNAL TELEMETRY ]</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Live Biosignal Simulator</h2>
+          <p class="text-slate-400 text-sm mt-1">
+            Real-time visual waveform generator demonstrating neural frequency bands processed by the 1D-CNN + BiLSTM model.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-card rounded-xl p-6 border border-purple-500/30">
+        <!-- Stage Controls -->
+        <div class="flex flex-wrap items-center gap-2 mb-4 font-mono text-xs">
+          <span class="text-slate-400 mr-2">SELECT STAGE:</span>
+          <button class="eeg-btn px-3 py-1.5 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:border-cyan-400 transition-colors" data-stage="WAKE">WAKE (β Beta)</button>
+          <button class="eeg-btn px-3 py-1.5 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:border-cyan-400 transition-colors" data-stage="N1">N1 (θ Theta)</button>
+          <button class="eeg-btn active-eeg px-3 py-1.5 rounded border border-cyan-500 bg-cyan-950/50 text-cyan-300" data-stage="N2">N2 (Spindles / K-Complex)</button>
+          <button class="eeg-btn px-3 py-1.5 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:border-cyan-400 transition-colors" data-stage="N3">N3 (δ Delta Slow-Wave)</button>
+          <button class="eeg-btn px-3 py-1.5 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:border-cyan-400 transition-colors" data-stage="REM">REM (Sawtooth)</button>
+        </div>
+
+        <!-- Waveform Oscilloscope Canvas -->
+        <div class="rounded-lg bg-slate-950 p-3 border border-slate-800 relative overflow-hidden">
+          <div class="absolute top-2 right-3 font-mono text-[11px] text-cyan-400/80">CHANNEL: Fpz-Cz // 100 Hz</div>
+          <canvas id="eeg-canvas" class="w-full h-28 block"></canvas>
+        </div>
+
+        <!-- Telemetry Readout -->
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-slate-800/80 font-mono text-xs">
+          <div>
+            <span class="text-slate-500 text-[11px]">CLASSIFICATION:</span>
+            <div id="eeg-stage-name" class="text-cyan-400 font-bold mt-0.5">STAGE: N2</div>
+          </div>
+          <div>
+            <span class="text-slate-500 text-[11px]">FREQUENCY BAND:</span>
+            <div id="eeg-band-name" class="text-white font-semibold mt-0.5">BAND: 12-14 Hz Spindles</div>
+          </div>
+          <div class="sm:col-span-2">
+            <span class="text-slate-500 text-[11px]">PHYSIOLOGICAL FEATURE:</span>
+            <div id="eeg-desc" class="text-slate-300 mt-0.5 truncate">True light sleep with spindle bursts and biphasic spikes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 4 // TECHNICAL COMPETENCY MATRIX
+         ======================================================== -->
+    <section id="stack" class="space-y-8">
+      <div>
+        <span class="font-mono text-xs text-cyan-400 uppercase tracking-widest">[ SKILLS MATRIX ]</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Technical Arsenal</h2>
+        <p class="text-slate-400 text-sm mt-1 max-w-xl">
+          Core engineering toolset deployed across distributed systems, neural networks, and web services.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Column 1: Big Data & Distributed Computing -->
+        <div class="tech-card p-6 rounded-xl border border-slate-800">
+          <div class="flex items-center gap-3 pb-4 mb-4 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white">Big Data & Analytics</h3>
+              <span class="text-xs font-mono text-amber-400">Distributed Architecture</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 font-mono text-xs text-slate-300">
+            <li class="flex items-center justify-between"><span>Apache Spark / PySpark</span><span class="text-cyan-400">Advanced</span></li>
+            <li class="flex items-center justify-between"><span>Hadoop HDFS</span><span class="text-cyan-400">Partitioned</span></li>
+            <li class="flex items-center justify-between"><span>Apache Hive</span><span class="text-cyan-400">Schema-on-Read</span></li>
+            <li class="flex items-center justify-between"><span>Spark MLlib</span><span class="text-cyan-400">Pipelines</span></li>
+            <li class="flex items-center justify-between"><span>Distributed SQL</span><span class="text-cyan-400">Optimized</span></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Machine Learning & Deep Learning -->
+        <div class="tech-card p-6 rounded-xl border border-slate-800">
+          <div class="flex items-center gap-3 pb-4 mb-4 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white">Machine Learning & AI</h3>
+              <span class="text-xs font-mono text-purple-400">Neural Modeling</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 font-mono text-xs text-slate-300">
+            <li class="flex items-center justify-between"><span>TensorFlow & Keras</span><span class="text-purple-400">1D-CNN / LSTM</span></li>
+            <li class="flex items-center justify-between"><span>Biosignals (EEG/EMG)</span><span class="text-purple-400">MNE-Python</span></li>
+            <li class="flex items-center justify-between"><span>Scikit-Learn</span><span class="text-purple-400">Ensembles / GBT</span></li>
+            <li class="flex items-center justify-between"><span>Pandas & NumPy</span><span class="text-purple-400">Vectorized</span></li>
+            <li class="flex items-center justify-between"><span>Matplotlib / Seaborn</span><span class="text-purple-400">Diagnostics</span></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Full-Stack & Platforms -->
+        <div class="tech-card p-6 rounded-xl border border-slate-800">
+          <div class="flex items-center gap-3 pb-4 mb-4 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white">Full-Stack & Systems</h3>
+              <span class="text-xs font-mono text-emerald-400">Production Web</span>
+            </div>
+          </div>
+          <ul class="space-y-2.5 font-mono text-xs text-slate-300">
+            <li class="flex items-center justify-between"><span>PHP 8.2+ & Laravel 11</span><span class="text-emerald-400">Service Layer</span></li>
+            <li class="flex items-center justify-between"><span>JavaScript (ES6+)</span><span class="text-emerald-400">Modern Async</span></li>
+            <li class="flex items-center justify-between"><span>Tailwind CSS & Vite</span><span class="text-emerald-400">Responsive UI</span></li>
+            <li class="flex items-center justify-between"><span>MySQL Relational</span><span class="text-emerald-400">Indexed Schema</span></li>
+            <li class="flex items-center justify-between"><span>Git & GitHub CLI</span><span class="text-emerald-400">CI/CD Flows</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 5 // CONTACT & TRANSMISSION CONSOLE
+         ======================================================== -->
+    <section id="contact" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="font-mono text-xs text-cyan-400 uppercase tracking-widest">[ UPLINK INITIALIZATION ]</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Establish Direct Contact</h2>
+        <p class="text-slate-400 text-sm">
+          Interested in discussing Big Data architectures, Deep Learning roles, or engineering collaboration? Send a transmission directly.
+        </p>
+      </div>
+
+      <div class="max-w-xl mx-auto tech-card p-8 rounded-xl border border-cyan-500/30 text-center space-y-6">
+        <div class="flex justify-center">
+          <div class="w-14 h-14 rounded-full bg-cyan-950/60 border border-cyan-500/40 flex items-center justify-center text-cyan-400 radar-ping">
+            <i data-lucide="radio" class="w-7 h-7"></i>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white">Vaibhav Mistry</h3>
+          <p class="font-mono text-xs text-cyan-400 mt-1">TORONTO, ONTARIO, CANADA</p>
+        </div>
+
+        <!-- Direct Actions -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+          <a href="https://github.com/vaibhavmistryyy" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-lg border border-slate-700 bg-slate-900 hover:border-cyan-400 text-white font-mono text-xs flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="github" class="w-4 h-4 text-cyan-400"></i>
+            <span>GITHUB / VAIBHAVMISTREYYY</span>
+          </a>
+          <button onclick="copyEmail('mistryvaibhav82@gmail.com')" class="w-full sm:w-auto px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-mono font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-cyan-500/20">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span>COPY EMAIL ADDRESS</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       PROJECT DEEP-DIVE MODAL / DRAWER
+       ======================================================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 modal-overlay hidden items-center justify-center p-4">
+    <div id="modal-inner-content" class="tech-card rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 border border-cyan-500/40 shadow-2xl relative">
+      <!-- Dynamic JS Content Injected Here -->
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="copy-toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-950 border border-emerald-500/60 text-emerald-400 px-4 py-3 rounded-xl shadow-2xl font-mono text-xs flex items-center gap-2.5">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span>[SUCCESS] EMAIL COPIED TO CLIPBOARD</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-950/80 py-8 px-4 text-center font-mono text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>© 2026 VAIBHAV MISTRY // ALL PROTOCOLS RESERVED</div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="#projects" class="hover:text-cyan-400">PROJECTS</a>
+        <a href="#terminal" class="hover:text-cyan-400">CLI</a>
+        <a href="https://github.com/vaibhavmistryyy" target="_blank" class="hover:text-cyan-400">GITHUB</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
