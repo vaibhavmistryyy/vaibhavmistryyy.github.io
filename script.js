@@ -1,10 +1,10 @@
 /**
- * VAIBHAV MISTRY // INTERACTIVE PORTFOLIO & TERMINAL ENGINE
- * Pure Vanilla JavaScript with Web Audio API, Canvas, & CLI Emulation
+ * VAIBHAV MISTRY // EXECUTIVE PORTFOLIO & TERMINAL ENGINE
+ * Pure Vanilla JavaScript • Web Audio API • Canvas Visualizers • CLI Emulation
  */
 
 // ==========================================
-// 1. AUDIO SYNTHESIZER (Web Audio API)
+// 1. AUDIO FEEDBACK SYNTHESIZER
 // ==========================================
 let audioCtx = null;
 let soundEnabled = false;
@@ -15,7 +15,7 @@ function initAudio() {
   }
 }
 
-function playBeep(freq = 880, type = 'sine', duration = 0.05, gain = 0.03) {
+function playTone(freq = 880, type = 'sine', duration = 0.04, gain = 0.02) {
   if (!soundEnabled || !audioCtx) return;
   try {
     const osc = audioCtx.createOscillator();
@@ -29,11 +29,11 @@ function playBeep(freq = 880, type = 'sine', duration = 0.05, gain = 0.03) {
     osc.start();
     osc.stop(audioCtx.currentTime + duration);
   } catch (e) {
-    // Audio context silently handled
+    // Audio silently handled
   }
 }
 
-// Toggle sound
+// Sound toggle
 const soundToggleBtn = document.getElementById('sound-toggle');
 if (soundToggleBtn) {
   soundToggleBtn.addEventListener('click', () => {
@@ -43,20 +43,20 @@ if (soundToggleBtn) {
       ? `<i data-lucide="volume-2" class="w-4 h-4 text-emerald-400"></i><span class="text-xs text-emerald-400 font-mono">AUDIO: ON</span>`
       : `<i data-lucide="volume-x" class="w-4 h-4 text-slate-400"></i><span class="text-xs text-slate-400 font-mono">AUDIO: OFF</span>`;
     lucide.createIcons();
-    if (soundEnabled) playBeep(1200, 'triangle', 0.08, 0.05);
+    if (soundEnabled) playTone(900, 'triangle', 0.06, 0.03);
   });
 }
 
 // ==========================================
-// 2. NEURAL CONSTELLATION CANVAS
+// 2. BACKGROUND NEURAL NODES CANVAS
 // ==========================================
 const bgCanvas = document.getElementById('neural-bg');
 if (bgCanvas) {
   const ctx = bgCanvas.getContext('2d');
   let width, height;
   let particles = [];
-  const particleCount = 45;
-  let mouse = { x: null, y: null, radius: 120 };
+  const particleCount = 40;
+  let mouse = { x: null, y: null, radius: 100 };
 
   function resizeCanvas() {
     width = bgCanvas.width = window.innerWidth;
@@ -78,9 +78,9 @@ if (bgCanvas) {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.radius = Math.random() * 1.8 + 1;
+      this.vx = (Math.random() - 0.5) * 0.45;
+      this.vy = (Math.random() - 0.5) * 0.45;
+      this.radius = Math.random() * 1.5 + 1;
     }
     update() {
       this.x += this.vx;
@@ -95,15 +95,15 @@ if (bgCanvas) {
         let dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < mouse.radius) {
           let force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 3;
-          this.y -= (dy / dist) * force * 3;
+          this.x -= (dx / dist) * force * 2.5;
+          this.y -= (dy / dist) * force * 2.5;
         }
       }
     }
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(6, 182, 212, 0.5)';
+      ctx.fillStyle = 'rgba(6, 182, 212, 0.4)';
       ctx.fill();
     }
   }
@@ -112,7 +112,7 @@ if (bgCanvas) {
     particles.push(new Particle());
   }
 
-  function animateNeural() {
+  function animate() {
     ctx.clearRect(0, 0, width, height);
     for (let i = 0; i < particles.length; i++) {
       particles[i].update();
@@ -121,37 +121,37 @@ if (bgCanvas) {
         let dx = particles[i].x - particles[j].x;
         let dy = particles[i].y - particles[j].y;
         let dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 130) {
+        if (dist < 120) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(6, 182, 212, ${0.15 * (1 - dist / 130)})`;
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = `rgba(6, 182, 212, ${0.12 * (1 - dist / 120)})`;
+          ctx.lineWidth = 0.7;
           ctx.stroke();
         }
       }
     }
-    requestAnimationFrame(animateNeural);
+    requestAnimationFrame(animate);
   }
-  animateNeural();
+  animate();
 }
 
 // ==========================================
-// 3. INTERACTIVE BIOSIGNAL (EEG) SIMULATOR
+// 3. BIOSIGNAL (EEG) OSCILLOSCOPE SIMULATOR
 // ==========================================
 const eegCanvas = document.getElementById('eeg-canvas');
 if (eegCanvas) {
   const eegCtx = eegCanvas.getContext('2d');
   let eegStage = 'N2';
-  let eegFrequency = 14; // Hz
-  let eegAmplitude = 25;
+  let eegFrequency = 13;
+  let eegAmplitude = 24;
   let eegTime = 0;
 
   const stageDescriptions = {
     'WAKE': { band: 'Beta (15-30 Hz)', desc: 'High frequency, low voltage desynchronized alert EEG', acc: '92.4%' },
     'N1': { band: 'Theta (4-7 Hz)', desc: 'Transition drowsiness with vertex sharp waves', acc: '78.1%' },
-    'N2': { band: 'Sleep Spindles (12-14 Hz) & K-Complexes', desc: 'True light sleep with spindle bursts and biphasic spikes', acc: '88.3%' },
-    'N3': { band: 'Delta (0.5-2 Hz)', desc: 'Slow wave deep sleep (>75 uV high amplitude)', acc: '89.7%' },
+    'N2': { band: 'Sleep Spindles (12-14 Hz) & K-Complexes', desc: 'True light sleep with burst spindle activity and biphasic spikes', acc: '88.3%' },
+    'N3': { band: 'Delta (0.5-2 Hz)', desc: 'Slow wave deep restorative sleep (>75 uV high amplitude)', acc: '89.7%' },
     'REM': { band: 'Sawtooth & Rapid Eye Movements', desc: 'Paradoxical sleep, muscle atonia (flat EMG), vivid dreaming', acc: '84.6%' }
   };
 
@@ -165,30 +165,29 @@ if (eegCanvas) {
 
     if (stage === 'WAKE') { eegFrequency = 22; eegAmplitude = 12; }
     else if (stage === 'N1') { eegFrequency = 6; eegAmplitude = 18; }
-    else if (stage === 'N2') { eegFrequency = 13; eegAmplitude = 28; }
-    else if (stage === 'N3') { eegFrequency = 1.5; eegAmplitude = 45; }
+    else if (stage === 'N2') { eegFrequency = 13; eegAmplitude = 26; }
+    else if (stage === 'N3') { eegFrequency = 1.5; eegAmplitude = 42; }
     else if (stage === 'REM') { eegFrequency = 16; eegAmplitude = 14; }
   }
 
-  // Stage button clicks
   document.querySelectorAll('.eeg-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       document.querySelectorAll('.eeg-btn').forEach(b => b.classList.remove('active-eeg'));
       btn.classList.add('active-eeg');
       const stage = btn.getAttribute('data-stage');
       updateStageInfo(stage);
-      playBeep(440, 'sawtooth', 0.04, 0.03);
+      playTone(520, 'sine', 0.04, 0.03);
     });
   });
 
-  function drawEEG() {
+  function drawWaveform() {
     const w = eegCanvas.width = eegCanvas.parentElement.clientWidth;
     const h = eegCanvas.height = 110;
     const centerY = h / 2;
 
     eegCtx.clearRect(0, 0, w, h);
 
-    // Draw baseline grid lines
+    // Center grid line
     eegCtx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
     eegCtx.lineWidth = 1;
     eegCtx.beginPath();
@@ -208,16 +207,13 @@ if (eegCanvas) {
       let y = centerY;
 
       if (eegStage === 'N2') {
-        // Add periodic spindle bursts & K-complexes
         let spindle = Math.sin(t * eegFrequency) * eegAmplitude * (0.5 + 0.5 * Math.sin(t * 0.3));
-        let kComplex = Math.sin(t * 0.2) > 0.85 ? Math.sin(t * 3) * 35 : 0;
+        let kComplex = Math.sin(t * 0.2) > 0.85 ? Math.sin(t * 3) * 32 : 0;
         y += spindle + kComplex;
       } else if (eegStage === 'N3') {
-        // High voltage slow waves
-        y += Math.sin(t * eegFrequency) * eegAmplitude + Math.sin(t * 0.8) * 15;
+        y += Math.sin(t * eegFrequency) * eegAmplitude + Math.sin(t * 0.8) * 14;
       } else {
-        // Standard sinusoidal mix with slight noise
-        y += Math.sin(t * eegFrequency) * eegAmplitude + (Math.sin(t * 5.3) * 4);
+        y += Math.sin(t * eegFrequency) * eegAmplitude + (Math.sin(t * 5.3) * 3);
       }
 
       if (x === 0) eegCtx.moveTo(x, y);
@@ -227,52 +223,56 @@ if (eegCanvas) {
     eegCtx.shadowBlur = 0;
 
     eegTime += 2;
-    requestAnimationFrame(drawEEG);
+    requestAnimationFrame(drawWaveform);
   }
-  drawEEG();
+  drawWaveform();
 }
 
 // ==========================================
-// 4. INTERACTIVE HACKER TERMINAL (CLI)
+// 4. PROFESSIONAL CLI TERMINAL ENGINE
 // ==========================================
 const terminalBody = document.getElementById('terminal-body');
 const terminalInput = document.getElementById('terminal-input');
 
 const CLI_COMMANDS = {
   help: () => `
-<span class="text-cyan-400 font-bold">AVAILABLE COMMANDS:</span>
-  <span class="text-emerald-400 font-mono">projects</span>      - List all 4 flagship engineering repositories with metadata
-  <span class="text-emerald-400 font-mono">skills</span>        - Output specialized Big Data & AI technical competencies
-  <span class="text-emerald-400 font-mono">architecture</span>  - Display distributed pipeline & neural architecture diagram
-  <span class="text-emerald-400 font-mono">metrics</span>       - Telemetry metrics: Spark runtime benchmarks & DL validation scores
-  <span class="text-emerald-400 font-mono">whoami</span>        - Developer bio, current focus, and contact details
-  <span class="text-emerald-400 font-mono">contact</span>       - Transmit connection protocols (GitHub, Email)
-  <span class="text-emerald-400 font-mono">clear</span>         - Purge the terminal screen
-  <span class="text-emerald-400 font-mono">matrix</span>        - Toggle digital matrix cipher mode
+<span class="text-cyan-400 font-bold">AVAILABLE PROTOCOLS:</span>
+  <span class="text-emerald-400 font-mono">projects</span>      - Inspect the 4 flagship engineering repositories with technical summaries
+  <span class="text-emerald-400 font-mono">skills</span>        - Technical radar: Big Data, Machine Learning, and Web Architecture
+  <span class="text-emerald-400 font-mono">architecture</span>  - ASCII diagram of the distributed Big Data ETL pipeline
+  <span class="text-emerald-400 font-mono">benchmarks</span>    - Performance metrics (Spark ingestion throughput, DL accuracy, ROC-AUC)
+  <span class="text-emerald-400 font-mono">education</span>     - Academic background & engineering credentials
+  <span class="text-emerald-400 font-mono">whoami</span>        - Professional profile & executive summary
+  <span class="text-emerald-400 font-mono">contact</span>       - Communication protocols & direct links
+  <span class="text-emerald-400 font-mono">clear</span>         - Purge the terminal display
 `,
   projects: () => `
-<span class="text-cyan-400 font-bold">📁 SYSTEM REPOSITORIES // FLAGSHIP ARCHIVES:</span>
+<span class="text-cyan-400 font-bold">📁 FLAGSHIP ENGINEERING REPOSITORIES:</span>
 
 [01] <a href="https://github.com/vaibhavmistryyy/workplace-mental-health-big-data" target="_blank" class="text-emerald-400 underline font-bold">workplace-mental-health-big-data</a>
-     • Stack: Hadoop HDFS, Apache Hive, Apache Spark, PySpark MLlib
-     • Pipeline: Multi-stage HDFS ingestion, Hive auditing, Spark MLlib classifiers (AUC: 0.81).
+     • <strong>Domain:</strong> Big Data Engineering & Predictive Analytics
+     • <strong>Tech Stack:</strong> Hadoop HDFS, Apache Hive, Apache Spark, PySpark MLlib
+     • <strong>Core Metrics:</strong> Multi-tier HDFS staging, Hive governance auditing, Spark MLlib GBT (ROC-AUC 0.81).
 
 [02] <a href="https://github.com/vaibhavmistryyy/sleep-stage-classification" target="_blank" class="text-emerald-400 underline font-bold">sleep-stage-classification</a>
-     • Stack: TensorFlow, 1D-CNN + BiLSTM, MNE-Python, Polysomnography (EEG/EOG/EMG)
-     • Performance: 84.6% Test Accuracy, 0.82 Cohen's Kappa across 5 clinical stages.
+     • <strong>Domain:</strong> Deep Learning & Biosignal Processing
+     • <strong>Tech Stack:</strong> TensorFlow, 1D-CNN + BiLSTM, MNE-Python, Polysomnography
+     • <strong>Core Metrics:</strong> 84.6% Test Accuracy, 0.82 Cohen's Kappa matching clinical PSG staging.
 
 [03] <a href="https://github.com/vaibhavmistryyy/TradeFinanceGuaranteeSystem" target="_blank" class="text-emerald-400 underline font-bold">TradeFinanceGuaranteeSystem</a>
-     • Stack: Laravel 11, PHP 8.2+, Tailwind CSS, MySQL, Vite
-     • Core: Corporate guarantee issuance, bulk batch CSV ingestion, GuaranteeService layer.
+     • <strong>Domain:</strong> Enterprise Web Application & Financial Systems
+     • <strong>Tech Stack:</strong> Laravel 11, PHP 8.2+, Tailwind CSS, MySQL, Vite
+     • <strong>Core Architecture:</strong> Decoupled Service Layer (GuaranteeService), bulk batch CSV ingestion, Breeze Auth.
 
 [04] <a href="https://github.com/vaibhavmistryyy/vaibhav-trinity-restaurant" target="_blank" class="text-emerald-400 underline font-bold">vaibhav-trinity-restaurant</a>
-     • Stack: JavaScript ES6+, jQuery, Swiper.js, HTML5/CSS3
-     • Scope: Interactive responsive single-page web app with reservations & dynamic menus.
+     • <strong>Domain:</strong> Modern Front-End Web Architecture
+     • <strong>Tech Stack:</strong> JavaScript (ES6+), jQuery, Swiper.js, HTML5/CSS3
+     • <strong>Performance:</strong> Responsive single-page web app, interactive meal filtering, 98+ Lighthouse score.
 `,
   skills: () => `
-<span class="text-cyan-400 font-bold">🛠️ TECHNICAL RADAR & COMPETENCIES:</span>
+<span class="text-cyan-400 font-bold">🛠️ TECHNICAL COMPETENCIES & RADAR:</span>
 
-  <span class="text-yellow-400 font-bold">[BIG DATA & DISTRIBUTED SYSTEMS]</span>
+  <span class="text-amber-400 font-bold">[BIG DATA & DISTRIBUTED SYSTEMS]</span>
   ├── Apache Spark / PySpark    [████████████████░░] 88%
   ├── Hadoop HDFS & Apache Hive [█████████████████░] 90%
   ├── Distributed SQL & ETL     [██████████████████] 95%
@@ -291,49 +291,48 @@ const CLI_COMMANDS = {
   └── MySQL & Relational Design [████████████████░░] 89%
 `,
   architecture: () => `
-<span class="text-cyan-400 font-bold">🏛️ DISTRIBUTED PIPELINE TOPOLOGY:</span>
+<span class="text-cyan-400 font-bold">🏛️ DISTRIBUTED DATA & ML PIPELINE:</span>
 <pre class="text-slate-300 font-mono text-xs">
-+---------------------+      +---------------------+      +---------------------+
-|   Raw Source Data   | ---> |  Hadoop HDFS Node   | ---> |   Apache Hive Data  |
-|  (CSV, Telemetry)   |      |  (Distributed Store)|      |   (Schema / Audit)  |
-+---------------------+      +---------------------+      +---------------------+
-                                                                     |
-                                                                     v
-+---------------------+      +---------------------+      +---------------------+
-| Predictive Insights | <--- |   Spark MLlib GBT   | <--- |   Apache Spark SQL  |
-|  & Web Dashboards   |      |   (Model Training)  |      |   (Feature Vector)  |
-+---------------------+      +---------------------+      +---------------------+
+[ Raw Ingestion ] ──────> [ Hadoop HDFS ] ──────> [ Apache Hive ]
+   (Survey Data)             (Cluster Store)         (Schema & Audit)
+                                                            │
+                                                            ▼
+[ Executive Dashboard ] <─ [ Spark MLlib GBT ] <─ [ Apache Spark SQL ]
+   (Risk Analytics)           (Trained Model)        (Feature Vectors)
 </pre>
 `,
-  metrics: () => `
-<span class="text-cyan-400 font-bold">📊 PRODUCTION BENCHMARKS & TELEMETRY:</span>
-  • Spark SQL Ingestion Throughput: 42,000 rec/sec
-  • Mental Health GBT Classifier ROC-AUC: 0.812
-  • Deep Learning 1D-CNN + BiLSTM Accuracy: 84.6%
-  • Sleep Stage Cohen's Kappa Coefficient: 0.82
-  • Average Laravel Guarantee API Response: 48ms
-  • Lighthouse Front-End Web Score: 98/100
+  benchmarks: () => `
+<span class="text-cyan-400 font-bold">📊 PRODUCTION BENCHMARKS:</span>
+  • Spark SQL Processing Throughput:  42,000 records/sec
+  • Mental Health Classifier ROC-AUC: 0.812 (Gradient-Boosted Trees)
+  • Sleep Stage DL Validation Acc:    84.6% (5 Clinical Stages)
+  • Sleep Stage Cohen's Kappa:        0.82 (High Inter-Rater Reliability)
+  • Trade Finance API Response:       48ms (Optimized Eloquent Queries)
+  • Lighthouse Front-End Web Score:   98/100
+`,
+  education: () => `
+<span class="text-cyan-400 font-bold">🎓 EDUCATION & BACKGROUND:</span>
+  • Specialized Post-Graduate Studies in Big Data Analytics & Software Engineering
+  • Technical Focus: Distributed Systems, Deep Learning, Biomedical Signals, Enterprise Web Platforms
+  • Location: Toronto, Ontario, Canada
 `,
   whoami: () => `
 <span class="text-emerald-400 font-bold">NAME:</span> Vaibhav Mistry
 <span class="text-emerald-400 font-bold">ROLE:</span> Big Data Engineer & Machine Learning Specialist | Full-Stack Developer
-<span class="text-emerald-400 font-bold">LOCATION:</span> Toronto, ON, Canada
-<span class="text-emerald-400 font-bold">FOCUS:</span> Scalable distributed systems, biosignal neural networks, enterprise web platforms.
-<span class="text-emerald-400 font-bold">STATUS:</span> <span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-xs">AVAILABLE FOR HIRE</span>
+<span class="text-emerald-400 font-bold">FOCUS:</span> Designing resilient distributed data architectures, neural sequence classifiers, and enterprise systems.
+<span class="text-emerald-400 font-bold">LOCATION:</span> Toronto, Ontario, Canada
+<span class="text-emerald-400 font-bold">STATUS:</span> <span class="text-emerald-400 font-bold">Available for High-Impact Full-Time Engineering Roles</span>
 `,
   contact: () => `
-<span class="text-cyan-400 font-bold">📡 TRANSMISSION CHANNELS:</span>
-  • GitHub:   <a href="https://github.com/vaibhavmistryyy" target="_blank" class="text-cyan-400 underline">https://github.com/vaibhavmistryyy</a>
+<span class="text-cyan-400 font-bold">📡 DIRECT TRANSMISSION CHANNELS:</span>
+  • GitHub:   <a href="https://github.com/vaibhavmistryyy" target="_blank" class="text-cyan-400 underline">github.com/vaibhavmistryyy</a>
+  • Portfolio: <a href="https://vaibhavmistryyy.github.io" target="_blank" class="text-cyan-400 underline">vaibhavmistryyy.github.io</a>
+  • Email:    Direct copy available via the contact card below
   • Location: Toronto, Ontario, Canada
-  • Protocol: Direct Inquiry Available via Portfolio Transmit Terminal
 `,
   clear: () => {
     terminalBody.innerHTML = '';
     return '';
-  },
-  matrix: () => {
-    document.body.classList.toggle('matrix-mode');
-    return '<span class="text-green-500 font-mono">MATRIX PROTOCOL TOGGLED // QUANTUM DECRYPTION ACTIVE</span>';
   }
 };
 
@@ -342,9 +341,8 @@ let historyIndex = -1;
 
 function handleCommand(cmdStr) {
   const cleanCmd = cmdStr.trim().toLowerCase();
-  playBeep(900, 'square', 0.04, 0.02);
+  playTone(850, 'sine', 0.03, 0.02);
 
-  // Append user input line
   const userLine = document.createElement('div');
   userLine.className = 'mb-1';
   userLine.innerHTML = `<span class="text-emerald-400 font-mono">guest@vaibhav-system:~$</span> <span class="text-slate-100 font-mono">${escapeHtml(cmdStr)}</span>`;
@@ -364,12 +362,11 @@ function handleCommand(cmdStr) {
         terminalBody.appendChild(outLine);
       }
     } else {
-      outLine.innerHTML = `<span class="text-rose-400">Command not recognized: "${escapeHtml(cleanCmd)}". Type <span class="text-cyan-400 underline cursor-pointer" onclick="runPreset('help')">help</span> for protocol instructions.</span>`;
+      outLine.innerHTML = `<span class="text-rose-400">Command not recognized: "${escapeHtml(cleanCmd)}". Type <span class="text-cyan-400 underline cursor-pointer" onclick="runPreset('help')">help</span> for available commands.</span>`;
       terminalBody.appendChild(outLine);
     }
   }
 
-  // Auto scroll to bottom
   terminalBody.scrollTop = terminalBody.scrollHeight;
 }
 
@@ -421,7 +418,7 @@ filterPills.forEach(pill => {
     filterPills.forEach(p => p.classList.remove('active-filter'));
     pill.classList.add('active-filter');
     const category = pill.getAttribute('data-filter');
-    playBeep(650, 'sine', 0.04, 0.03);
+    playTone(600, 'sine', 0.04, 0.03);
 
     projectCards.forEach(card => {
       const cardCat = card.getAttribute('data-category');
@@ -500,7 +497,7 @@ const modalContent = document.getElementById('modal-inner-content');
 function openProjectModal(key) {
   const p = projectModals[key];
   if (!p) return;
-  playBeep(1100, 'triangle', 0.05, 0.04);
+  playTone(950, 'triangle', 0.05, 0.03);
 
   let imgHtml = p.img 
     ? `<div class="mb-4 rounded-lg overflow-hidden border border-cyan-500/30 bg-slate-950 p-2 text-center">
@@ -545,7 +542,7 @@ function openProjectModal(key) {
 function closeProjectModal() {
   modal.classList.add('hidden');
   modal.classList.remove('flex');
-  playBeep(400, 'sine', 0.04, 0.02);
+  playTone(400, 'sine', 0.04, 0.02);
 }
 
 if (modal) {
@@ -572,7 +569,7 @@ if (uptimeEl) {
 // Copy contact email
 function copyEmail(email) {
   navigator.clipboard.writeText(email).then(() => {
-    playBeep(1200, 'sine', 0.06, 0.05);
+    playTone(1050, 'sine', 0.06, 0.04);
     const toast = document.getElementById('copy-toast');
     if (toast) {
       toast.classList.remove('translate-y-20', 'opacity-0');
@@ -585,7 +582,6 @@ function copyEmail(email) {
   });
 }
 
-// Initialize Lucide icons on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) lucide.createIcons();
 });
