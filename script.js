@@ -325,10 +325,10 @@ const CLI_COMMANDS = {
 `,
   contact: () => `
 <span class="text-cyan-400 font-bold">📡 DIRECT TRANSMISSION CHANNELS:</span>
-  • GitHub:   <a href="https://github.com/vaibhavmistryyy" target="_blank" class="text-cyan-400 underline">github.com/vaibhavmistryyy</a>
+  • GitHub:    <a href="https://github.com/vaibhavmistryyy" target="_blank" class="text-cyan-400 underline">github.com/vaibhavmistryyy</a>
   • Portfolio: <a href="https://vaibhavmistryyy.github.io" target="_blank" class="text-cyan-400 underline">vaibhavmistryyy.github.io</a>
-  • Email:    Direct copy available via the contact card below
-  • Location: Toronto, Ontario, Canada
+  • Email:     <a href="mailto:vaibhavmistry57@gmail.com" class="text-emerald-400 underline">vaibhavmistry57@gmail.com</a>
+  • Location:  Toronto, Ontario, Canada
 `,
   clear: () => {
     terminalBody.innerHTML = '';
